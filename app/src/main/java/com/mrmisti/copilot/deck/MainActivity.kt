@@ -18,7 +18,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             CopilotDeckTheme {
                 // A surface container using the 'background' color from the theme
-                // Cuack
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,

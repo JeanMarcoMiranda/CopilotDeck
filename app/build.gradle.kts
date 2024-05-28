@@ -1,38 +1,10 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ktlint)
-    alias(libs.plugins.copilot.deck.android.application.jacoco)
+    alias(libs.plugins.copilotdeck.android.application.jacoco)
     alias(libs.plugins.roborazzi)
-    alias(libs.plugins.sonarqube)
-}
-
-sonarqube {
-    properties {
-        // Required
-        property("sonar.host.url", "https://sonarqube.app.mrmisti.com")
-        property("sonar.token", "sqp_440f90bc3f55fe5198617668b306a82f216e5d69")
-        property("sonar.projectKey", "copilotdeck2")
-        property("sonar.coverage.jacoco.xmlReportPaths", "**/jacoco/**/*Report.xml")
-        // Optional
-        property("sonar.sources", "src/main/java")
-        property("sonar.tests", "src/test/java")
-        property("sonar.sourceEncoding", "UTF-8")
-        property(
-            "sonar.exclusions",
-            "**/*Test*/**," +
-                "*.json," +
-                "**/*test*/**," +
-                "**/.gradle/**," +
-                "**/R.class," +
-                "**/R.class," +
-                "**/R\$*.class," +
-                "**/BuildConfig.*," +
-                "**/Manifest*.*," +
-                "**/*_Hilt*.class," +
-                "**/*Test*.*,",
-        )
-    }
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -61,6 +33,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -87,6 +60,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":prueba"))
+    implementation(project(":pruebaTheming"))
+
+    // MVIKotlin Implementation
+    implementation(libs.mvikotlin.timetravel)
+    implementation("com.arkivanov.mvikotlin:mvikotlin:4.0.0")
+    implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:4.0.0")
+    implementation("com.arkivanov.mvikotlin:mvikotlin-main:4.0.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

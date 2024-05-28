@@ -6,45 +6,35 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.mrmisti.copilot.deck.ui.theme.CopilotDeckTheme
+import com.arkivanov.mvikotlin.extensions.coroutines.states
+import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
+import com.example.pruebatheming.designsystem.theme.CopilotDeckTheme
+import com.example.pruebatheming.presentation.home.HomeScreen
+import com.example.pruebatheming.presentation.home.HomeStoreFactory
+import com.example.pruebatheming.presentation.home.HomeViewState
 
 class MainActivity : ComponentActivity() {
+    private val homeStore = HomeStoreFactory(DefaultStoreFactory()).create()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CopilotDeckTheme {
-                // A surface container using the 'background' color from the theme
-                // Cuack
+            val homeState by homeStore.states.collectAsState(initial = HomeViewState())
+
+            CopilotDeckTheme(
+                theme = homeState.selectedTheme,
+                darkTheme = homeState.isDarkTheme,
+            ) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    Greeting("Android")
+                    HomeScreen(homeStore)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(
-    name: String,
-    modifier: Modifier = Modifier,
-) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CopilotDeckTheme {
-        Greeting("Android")
     }
 }

@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "CopilotDeck"
 include(":app")
+include(":prueba")
+include(":pruebaTheming")

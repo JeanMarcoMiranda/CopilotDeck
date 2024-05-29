@@ -23,6 +23,7 @@ import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import com.example.pruebatheming.designsystem.theme.CopilotDeckTheme
 import com.example.pruebatheming.presentation.home.HomeStoreFactory
 import com.example.pruebatheming.presentation.home.HomeViewState
+import com.mrmisti.copilot.deck.designsystem.component.berlinSidebar.BerlinSidebar
 import com.mrmisti.copilot.deck.presentation.about.AboutScreen
 import com.mrmisti.copilot.deck.presentation.card.CardScreen
 import com.mrmisti.copilot.deck.presentation.map.MapScreen

@@ -40,7 +40,11 @@ fun BerlinSidebarItemView(
         modifier =
             modifier
                 .fillMaxWidth()
-                .clickable { onClick() },
+                .clickable(
+                    onClick = onClick,
+                    interactionSource = null,
+                    indication = null
+                ),
     ) {
         Column(
             modifier =

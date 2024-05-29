@@ -4,5 +4,6 @@
     <string name="text_sidebar_card">Carta</string>
     <string name="text_sidebar_map">Mapa</string>
     <string name="text_sidebar_message">Mensajeria</string>
+    <string name="text_sidebar_about">Sobre</string>
     <string name="text_sidebar_settings">Configuracion</string>
 </resources>

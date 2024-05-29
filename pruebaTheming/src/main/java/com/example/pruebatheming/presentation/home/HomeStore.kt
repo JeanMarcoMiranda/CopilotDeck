@@ -7,9 +7,9 @@ import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
 import com.example.pruebatheming.designsystem.theme.AppTheme
 
 data class HomeViewState(
-    val isDarkTheme: Boolean = false,
+    val isDarkTheme: Boolean = true,
     val selectExpanded: Boolean = false,
-    val selectedTheme: AppTheme = AppTheme.Jacket
+    val selectedTheme: AppTheme = AppTheme.Berlin
 )
 
 sealed class HomeIntent {

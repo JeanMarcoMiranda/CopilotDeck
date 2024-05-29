@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.copilotdeck.android.application.jacoco)
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 
     alias(libs.plugins.kotlin.serialization)
 }

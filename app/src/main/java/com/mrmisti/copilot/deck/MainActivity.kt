@@ -23,10 +23,11 @@ import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import com.example.pruebatheming.designsystem.theme.CopilotDeckTheme
 import com.example.pruebatheming.presentation.home.HomeStoreFactory
 import com.example.pruebatheming.presentation.home.HomeViewState
+import com.mrmisti.copilot.deck.presentation.about.AboutScreen
 import com.mrmisti.copilot.deck.presentation.card.CardScreen
 import com.mrmisti.copilot.deck.presentation.map.MapScreen
 import com.mrmisti.copilot.deck.presentation.message.MessageScreen
-import com.mrmisti.copilot.deck.presentation.settings.SettingsScreen
+import com.mrmisti.copilot.deck.presentation.setting.SettingsScreen
 import kotlinx.serialization.Serializable
 
 class MainActivity : ComponentActivity() {
@@ -73,6 +74,9 @@ class MainActivity : ComponentActivity() {
                             composable<Screen.Mesage> {
                                 MessageScreen()
                             }
+                            composable<Screen.About> {
+                                AboutScreen()
+                            }
                             composable<Screen.Settings> {
                                 SettingsScreen()
                             }
@@ -96,4 +100,7 @@ sealed interface Screen {
 
     @Serializable
     data object Settings : Screen
+
+    @Serializable
+    data object About : Screen
 }

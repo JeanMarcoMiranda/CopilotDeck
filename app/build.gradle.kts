@@ -3,8 +3,9 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.copilotdeck.android.application.jacoco)
-    alias(libs.plugins.roborazzi)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -68,6 +69,11 @@ dependencies {
     implementation("com.arkivanov.mvikotlin:mvikotlin:4.0.0")
     implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:4.0.0")
     implementation("com.arkivanov.mvikotlin:mvikotlin-main:4.0.0")
+    // Material Icons Extended
+    implementation("androidx.compose.material:material-icons-extended:1.0.5")
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

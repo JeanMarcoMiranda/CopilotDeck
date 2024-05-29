@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CopilotDeck</string>
+    <string name="text_sidebar_card">Carta</string>
+    <string name="text_sidebar_map">Mapa</string>
+    <string name="text_sidebar_message">Mensajeria</string>
+    <string name="text_sidebar_settings">Configuracion</string>
+</resources>

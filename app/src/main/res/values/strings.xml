@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CopilotDeck</string>
+    <string name="text_sidebar_card">Card</string>
+    <string name="text_sidebar_map">Map</string>
+    <string name="text_sidebar_message">Message</string>
+    <string name="text_sidebar_settings">Settings</string>
 </resources>

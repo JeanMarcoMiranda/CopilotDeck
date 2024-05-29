@@ -57,8 +57,8 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v3
 
-      - name: Run local tests (including Roborazzi) for the combined coverage report (only API 30)
-        run: ./gradlew testDebugUnitTest -Proborazzi.test.verify=false # Add Prod if we ever add JVM tests for prod
+      - name: Run local tests
+        run: ./gradlew testDebugUnitTest
 
       - name: Generate coverage reports for Debug variants
         run: ./gradlew createDebugCombinedCoverageReport
